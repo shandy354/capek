@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tanaman</title>
+</head>
+<header>
+    <%- include('./partials/header'); %>
+</header>
+<body>
+    <div class="container">
+      <h1 class="my-5 text-center">Tambah Data Tanaman</h1>
+      <form class="my-5 " enctype="multipart/form-data" method="POST" action="/aadd">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama Tanaman</label>
+          <input type="text" class="form-control" name="nama" id="nama" placeholder="Kelor (Moringa)" value="" required>
+        </div>
+        <div class="mb-3">
+          <label for="kategori" class="form-label">Kategori </label>
+          <input type="text" class="form-control" name="kategori" id="kategori" placeholder="Kategori Tanaman Obat" value="" required>
+        </div>
+        <div class="mb-3">
+          <label for="lokasi" class="form-label">Lokasi Tanaman</label>
+          <input type="text" class="form-control" name="lokasi" id="lokasi" placeholder=" Jln xxxxxx" value="" required>
+        </div>
+        <div class="form-group">
+          <label for="deskripsi">Example textarea</label>
+          <textarea class="form-control" id="deskripsi" rows="3" name="deskripsi"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Gambar Tanaman</label>
+          <input class="form-control" type="file" name="img">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="text-center my-5">
+        <p class="fw-bold">Another</p>
+        <a href="/admin" class="text-decoration-none text-secondary fw-bold px-3 py-1">Back to Data All</a>
+      </div>
+    </div>
+
+</body>
+</html>

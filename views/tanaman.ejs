@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header>
+    <%- include('./partials/header'); %>
+</header>
+<body>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <% users.forEach(user => { %>
+        <div class="col">
+          <div class="card h-100">
+            <img src="<%= user.img %>" class="card-img-top" alt="..." >
+            <div class="card-body">
+              <h5 class="card-title"><%= user.nama %></h5>
+              <!-- <h5>Kategori <%= user.kategori %></h5>
+              <p class="card-text"><%= user.deskripsi %></p> -->
+            </div>
+            
+            <div class="card-footer">
+              <div class="col-md-12 text-center">
+                <a href="/tanaman/<%= user.id %>" class="btn btn-primary ">DETIL</a> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %> 
+      </div> 
+    </div>
+</body>
+</html>

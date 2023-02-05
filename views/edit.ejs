@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Tanaman</title>
+</head>
+<header>
+    <%- include('./partials/header'); %>
+</header>
+<body>
+    <div class="container">
+      <h1 class="my-5 text-center">Edit Data Tanaman</h1>
+      
+      <form class="my-5 " enctype="multipart/form-data" method="POST" action="/eedit/<%= user.id %>">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama Tanaman</label>
+          <input type="text" class="form-control" name="nama" id="nama"  value="<%= user.nama %>" required>
+        </div>
+        <div class="mb-3">
+          <label for="kategori" class="form-label">Kategori </label>
+          <input type="text" class="form-control" name="kategori" id="kategori"  value="<%= user.kategori %>" required>
+        </div>
+        <div class="mb-3">
+          <label for="lokasi" class="form-label">Lokasi Tanaman</label>
+          <input type="text" class="form-control" name="lokasi" id="lokasi"  value="<%= user.lokasi %>" required>
+        </div>
+        <div class="form-group">
+          <label for="deskripsi" class="form-label">Deskripsi</label>
+          <!-- <input type="text" class="form-control form-control-lg "  name="deskripsi" id="deskripsi" height="100" value="<%= user.deskripsi %>" required> -->
+          <textarea class="form-control" id="deskripsi" rows="3" name="deskripsi" ><%= user.deskripsi%></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Gambar Tanaman</label>
+            <input class="form-control" type="file" name="img">
+        </div>
+        <% if(user.img){%>
+            <img src="/<%= user.img %>" alt="image" width="120">
+       <% } %> 
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="text-center my-5">
+        <p class="fw-bold">Another</p>
+        <a href="/admin" class="text-decoration-none text-secondary fw-bold px-3 py-1">Back to User All</a>
+    </div>
+
+
+    </div>
+
+</body>
+</html>

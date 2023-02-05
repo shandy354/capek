@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home admin</title>
+</head>
+<header>
+    <%- include('./partials/header'); %>
+</header>
+<body>
+    <h1 class="text-center">Data Tanaman</h1>
+
+    <div class="container">
+        <a href="/add" class="btn btn-success px-3 py-1 active"><h4>ADD Data Tanaman</h4> </a>
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <% users.forEach(users => { %>
+        <div class="col">
+          <div class="card h-100">
+            <img src="<%= users.img %>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= users.nama %></h5>
+                <h5>Kategori <%= users.kategori %></h5>
+                <!-- <p class="card-text"><%= users.deskripsi %></p> -->
+              </div>
+              <div class="card-footer">
+                <div class="col-md-12 text-center">
+                  <a href="/showedit/<%= users.id %>" class="btn btn-primary px-4 py-1">Edit</a>
+                  <a href="/delete/<%= users.id %>" class="btn btn-outline-danger px-3 py-1 " onclick="return confirm('Are you sure you want to delete this tanaman?');">Hapus</a>
+                  <!-- <a href="/tanaman/<%= users.id %>" class="btn btn-primary ">DETIL</a>  -->
+                </div>
+              </div>
+          </div>
+        </div>
+        <% }) %> 
+      </div> 
+    </div>
+</body>
+</html>
